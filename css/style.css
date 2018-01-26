@@ -1,0 +1,197 @@
+@charset "utf-8";
+body, html {
+    font-size: 100px;
+    height: 100%;
+    width: 100%;
+}
+@media (max-width: 320px){
+	html,body{
+		font-size:85px;
+	}
+}
+body {
+    font-size: 0.14rem;
+    line-height: 1.8;
+    font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: #666666;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow-y: visible !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: moz-none;
+    user-select: none;
+}
+body * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+section.main.fixed {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+section.main {
+    position: relative;
+    z-index: 100;
+}
+.load_box {
+    height: 100%;
+    background: url(../images/background.jpg) no-repeat center center;
+    background-size: cover;
+}
+header, footer, section, nav, menu, details, hgroup, figure, figcaption, article, aside {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+p{
+	margin-bottom:0;
+}
+p {
+    margin: 0 0 0.1rem;
+}
+section.main.fixed > article {
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+}
+img {
+    vertical-align: middle;
+    font-size: 0;
+}
+fieldset, img {
+    border: 0 none;
+}
+.load_main{
+	padding:0 0.15rem;
+}
+.load_head{
+	padding:0.72rem 0.15rem 0.32rem;
+}
+.load_head .logo{
+	display:block;
+	width:0.62rem;
+	height:0.62rem;
+	margin:0 auto;
+	background:url(../images/logo.png) no-repeat center center;
+	background-size:100% 100%;
+}
+.load_head p{
+	font-size:0.2rem;
+	line-height:0.2rem;
+	color:#ffffff;
+	text-align:center;
+	margin-top:0.15rem;
+	margin-bottom:0;
+	font-family: PingFangSC-Medium;
+}
+.load_head p.small{
+	font-size:0.16rem;
+	line-height:0.16rem;
+	margin-top:0.14rem;
+	font-family: PingFangSC-Regular;
+}
+.load_bott p{
+	padding:0 0.15rem;
+	font-size:0.12rem;
+	color:#666666;
+	text-align:center;
+}
+.btn_box ul{
+	display:table;
+	width:100%;
+	border-collapse:collapse;
+	table-layout:fixed;
+}
+.btn_box li{
+	display:table-row;
+	vertical-align:top;
+	padding:0 0.05rem;
+}
+.btn_box li a{
+	display:block;
+	height:0.49rem;
+	line-height:0.49rem;
+	font-size:0.18rem;
+	color:#ffffff;
+	/*text-align:center;*/
+	background:#4a83f4;
+	-moz-border-radius:0.245rem;
+	-webkit-border-radius:0.245rem;
+	border-radius:0.245rem;
+	position:relative;
+	margin: 0 auto 0.2rem;
+	width: 2.1rem;
+	text-decoration: none;
+	font-family: PingFangSC-Light;
+}
+.btn_box li a:before{
+	content:'';
+	display:inline-block;
+	vertical-align:top;
+	height:0.49rem;
+	width:0.22rem;
+	background:url(../images/Android.png) no-repeat center center;
+	background-size:0.22rem;
+	margin-right: 0.2rem;
+	margin-left: 0.3rem;
+}
+.btn_box li:nth-child(1) a:before{
+	background:url(../images/IOS.png) no-repeat center center;
+	background-size:0.22rem;
+}
+.dialog_mask{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background: #000000;
+	filter: alpha(opacity=66);
+	opacity:0.66;
+	z-index:999;
+	display:none;
+}
+.dialog_tip{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:1000;
+	/*padding:0 0.29rem 0 0.3rem;*/
+	display:none;
+}
+.dialog_tip p{
+	font-family: "黑体";
+	font-size:0.15rem;
+	color:#FFFFFF;
+	text-align: center;
+	margin:0;
+	font-weight:500;
+}
+.dialog_tip img{
+	display:block;
+	width:100%;
+	/*margin-top:0.5rem;	*/
+}

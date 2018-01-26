@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>我的168——软件下载</title>
+	</head>
+	<body>
+		<section class="main fixed load_box">
+			<header>
+				<div class="load_head">
+					<div class="logo"></div>
+					<p>我的168</p>
+					<p class="small">华证人的专属移动办公平台</p>
+				</div>
+			</header>
+			<article>
+				<div class="load_main">
+					<div class="load_bott">
+						<div class="btn_box">
+							<ul>
+								<li><a href="javaScript:hrefIOS();">IPhone下载</a></li>
+								<li><a href="javaScript:hrefAndroid();">Android下载</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</article>
+			<footer>
+			</footer>
+		</section>
+		<div class="dialog_mask" onclick="hideMask();"></div>
+		<div class="dialog_tip" onclick="hideMask();">
+			<img src="images/share-object-bg.png">
+		</div>
+	</body>
+	<script type="text/javascript">
+		function hrefAndroid() {
+			var userAgent = window.navigator.userAgent;
+			if(userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i)){
+				$('.dialog_mask,.dialog_tip').show();
+			}else{
+				alert("敬请期待！"); 
+			}
+		}
+		function hrefIOS() {
+			var userAgent = window.navigator.userAgent;
+			if(userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i)){
+				$('.dialog_mask,.dialog_tip').show();
+			}else{
+				alert("敬请期待！");  
+			}
+		}
+		function hideMask() {
+			$('.dialog_mask,.dialog_tip').hide();
+		}
+	</script>
+</html>
