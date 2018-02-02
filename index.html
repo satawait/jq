@@ -8,6 +8,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vconsole.min.js" type="text/javascript" charset="utf-8"></script>
 		<title>我的168——软件下载</title>
 	</head>
 	<body>
@@ -43,6 +44,7 @@
 		</div>
 	</body>
 	<script type="text/javascript">
+		var vConsole = new VConsole();
 		function download() {
 			var deviceInfo = getDeviceType();
 			if(deviceInfo.isWeChat){
@@ -61,7 +63,7 @@
 		function getDeviceType() {
 			var userAgent = window.navigator.userAgent,
 		        result = {};
-		    alert(userAgent);
+		    console.log(userAgent);
 		    if (userAgent) {
 		        result.isWeChat = userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i);
 		        result.isIOS = userAgent.match(/Mac OS X/i);
