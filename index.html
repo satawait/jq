@@ -24,8 +24,8 @@
 					<div class="load_bott">
 						<div class="btn_box">
 							<ul>
-								<li><a href="javaScript:hrefIOS();">IPhone下载</a></li>
-								<li><a href="javaScript:hrefAndroid();">Android下载</a></li>
+								<li><a href="javaScript:download();">IPhone下载</a></li>
+								<li><a href="javaScript:download();">Android下载</a></li>
 							</ul>
 						</div>
 					</div>
@@ -43,24 +43,31 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-		function hrefAndroid() {
-			var userAgent = window.navigator.userAgent;
-			if(userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i)){
+		function download() {
+			var deviceInfo = util.getDeviceType();
+			if(deviceInfo.isWeChat){
 				$('.dialog_mask,.dialog_tip').show();
+			}else if(deviceInfo.isIOS){
+				// alert("敬请期待！"); 
+				window.location.href="https://itunes.apple.com/us/app/%E6%88%91%E7%9A%84168/id1332898609?ls=1&mt=8"; 
 			}else{
-				alert("敬请期待！"); 
-			}
-		}
-		function hrefIOS() {
-			var userAgent = window.navigator.userAgent;
-			if(userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i)){
-				$('.dialog_mask,.dialog_tip').show();
-			}else{
-				alert("敬请期待！");  
+				// alert("敬请期待！"); 
+				window.location.href="http://www.hx168.com.cn/downloads/ycfapp/v100/ycfapp_wz.apk"; 
 			}
 		}
 		function hideMask() {
 			$('.dialog_mask,.dialog_tip').hide();
+		}
+		function getDeviceType() {
+			var userAgent = window.navigator.userAgent,
+		        result = {};
+
+		    if (userAgent) {
+		        result.isWeChat = userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i);
+		        result.isIOS = userAgent.match(/Mac OS X/i);
+		        result.isAndroid = userAgent.match(/Android/i);
+		    }
+		    return result;
 		}
 	</script>
 </html>
