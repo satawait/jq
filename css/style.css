@@ -1,7 +1,7 @@
 @charset "utf-8";
 body, html {
     font-size: 100px;
-    min-height: 100%;
+    height: 100%;
     width: 100%;
 }
 @media (max-width: 320px){
@@ -42,7 +42,7 @@ section.main.fixed {
     box-orient: vertical;
     -webkit-flex-direction: column;
     flex-direction: column;
-    min-height: 100%;
+    /*height: 100%;*/
     width: 100%;
 }
 section.main {
@@ -50,7 +50,7 @@ section.main {
     z-index: 100;
 }
 .load_box {
-    height: 100%;
+    min-height: 100%;
     background: url(../images/background.jpg) no-repeat center center;
     background-size: cover;
 }
@@ -66,16 +66,15 @@ p {
     margin: 0 0 0.1rem;
 }
 section.main.fixed > article {
-/*    -moz-box-flex: 0 1 auto;
-    -webkit-box-flex: 0 1 auto;
-    -webkit-flex: 0 1 auto;
-    flex: 0 1 auto;
-    height: 100%;
+/*  height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
     position: relative;*/
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 0;
 }
 section.main.fixed > footer {
     width: 100%;
