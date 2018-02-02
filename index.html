@@ -61,7 +61,7 @@
 		function getDeviceType() {
 			var userAgent = window.navigator.userAgent,
 		        result = {};
-
+		    alert(userAgent);
 		    if (userAgent) {
 		        result.isWeChat = userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i);
 		        result.isIOS = userAgent.match(/Mac OS X/i);
