@@ -44,7 +44,7 @@
 	</body>
 	<script type="text/javascript">
 		function download() {
-			var deviceInfo = util.getDeviceType();
+			var deviceInfo = getDeviceType();
 			if(deviceInfo.isWeChat){
 				$('.dialog_mask,.dialog_tip').show();
 			}else if(deviceInfo.isIOS){
