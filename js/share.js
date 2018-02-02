@@ -45,7 +45,6 @@
   }
   function _initQQ(data) {
     var info = {title:data.title, desc:data.summary, share_url:data.url, image_url:data.pic};
-    console.log(info);
     function doQQShare() {
       try {
         console.log(data);
