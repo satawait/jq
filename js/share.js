@@ -47,6 +47,7 @@
     var info = {title:data.title, desc:data.summary, share_url:data.url, image_url:data.pic};
     function doQQShare() {
       try {
+        console.log(data);
         if (data.callback) {
           window.mqq.ui.setOnShareHandler(function(type) {
             if (type == 3 && (data.swapTitle || data.WXconfig && data.WXconfig.swapTitleInWX)) {
