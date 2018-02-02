@@ -47,10 +47,8 @@
     var info = {title:data.title, desc:data.summary, share_url:data.url, image_url:data.pic};
     function doQQShare() {
       try {
-        console.log("data", data);
         if (data.callback) {
           window.mqq.ui.setOnShareHandler(function(type) {
-            console.log("type", type);
             if (type == 3 && (data.swapTitle || data.WXconfig && data.WXconfig.swapTitleInWX)) {
               info.title = data.summary;
             } else {
@@ -59,14 +57,12 @@
             info.share_type = type;
             info.back = true;
             window.mqq.ui.shareMessage(info, function(result) {
-              console.log("result", result);
               if (result.retCode === 0) {
                 data.callback && data.callback.call(this, result);
               }
             });
           });
         } else {
-          console.log("info", info);
           window.mqq.data.setShareInfo(info);
         }
       } catch (e) {
