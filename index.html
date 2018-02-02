@@ -6,10 +6,13 @@
 		<meta name="format-detection" content="telephone=no"/>
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
 		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta itemprop="name" content="标题">
+<meta itemprop="description" content="描述">
+<meta itemprop="image" content="图片">
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/vconsole.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/share.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="js/share.js" type="text/javascript" charset="utf-8"></script> -->
 		<title>我的168——软件下载</title>
 	</head>
 	<body>
@@ -46,13 +49,13 @@
 	</body>
 	<script type="text/javascript">
 		var vConsole = new VConsole();
-		setShareInfo({
-			pic: "https://mkt.hx168.com.cn/mkts/m/financial/images/icon-songyongjinbi.png",
-			summary: "华西证券造新节，开户即送200K豆！抵扣佣金当钱花！",
-			title: "普惠到底 造新有礼",
-			url: window.location.href + '&tencentShare=1'
+		// setShareInfo({
+		// 	pic: "https://mkt.hx168.com.cn/mkts/m/financial/images/icon-songyongjinbi.png",
+		// 	summary: "华西证券造新节，开户即送200K豆！抵扣佣金当钱花！",
+		// 	title: "普惠到底 造新有礼",
+		// 	url: window.location.href + '&tencentShare=1'
 			
-	     });
+	    //  });
 		function download() {
 			var deviceInfo = getDeviceType();
 			if(deviceInfo.isWeChat){
