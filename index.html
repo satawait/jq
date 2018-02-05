@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/vconsole.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="https://qzonestyle.gtimg.cn/qzone/qzact/common/share/share.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/share.js" type="text/javascript" charset="utf-8"></script>
 		<title>我的168——软件下载</title>
 	</head>
 	<body>
@@ -47,12 +47,12 @@
 	<script type="text/javascript">
 		var vConsole = new VConsole();
 		setShareInfo({
-     		title: '父爱，在你看不到的地方',
-         	summary: '父爱如山，感觉不到只因身在此山中',
-         	pic: 'https://qzonestyle.gtimg.cn/aoi/sola/20150617094556_OvfOpoRKRB.png',
-         	url: 'satawait.github.io/jq/index.html'
+			pic: "https://mkt.hx168.com.cn/mkts/m/financial/images/icon-songyongjinbi.png",
+			summary: "华西证券造新节，开户即送200K豆！抵扣佣金当钱花！",
+			title: "普惠到底 造新有礼",
+			url: window.location.href
+			
 	     });
-		console.log(window.navigator.userAgent.match(/QQ\/([\d\.]+)/)); 
 		function download() {
 			var deviceInfo = getDeviceType();
 			if(deviceInfo.isWeChat){
