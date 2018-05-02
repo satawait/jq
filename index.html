@@ -56,15 +56,18 @@
 	     });
 		function download() {
 			var deviceInfo = getDeviceType();
+			alert(window.navigator.userAgent);
 			if(deviceInfo.isWeChat){
 				$('.dialog_mask,.dialog_tip').show();
 			}else if(deviceInfo.isIOS){
 				// alert("敬请期待！"); 
 				// window.location.href="https://itunes.apple.com/us/app/%E6%88%91%E7%9A%84168/id1332898609?ls=1&mt=8"; 
 				window.location.href="./homework/index.html";
-			}else{
+			}else if(deviceInfo.isAndroid){
 				// alert("敬请期待！"); 
 				window.location.href="https://ma.hx168.com.cn/m/my168/resource/pkg/my168_latest.apk"; 
+			} else {
+				alert("请在手机浏览器中打开！"); 
 			}
 		}
 		function hideMask() {
@@ -75,7 +78,7 @@
 		        result = {};
 		    if (userAgent) {
 		        result.isWeChat = userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i);
-		        result.isIOS = userAgent.match(/Mac OS X/i);
+		        result.isIOS = userAgent.match(/(iPhone|iPad|iPod)/i);
 		        result.isAndroid = userAgent.match(/Android/i);
 		    }
 		    return result;
