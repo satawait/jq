@@ -57,6 +57,9 @@
 		function download() {
 			var deviceInfo = getDeviceType();
 			alert(!window.navigator.userAgent.match(/MQQBrowser/i));
+			alert(!window.navigator.userAgent.match(/CriOS/i));
+			alert(!window.navigator.userAgent.match(/UCBrowser/i));
+			alert(!window.navigator.userAgent.match(/MQQBrowser/i)||!window.navigator.userAgent.match(/CriOS/i)||!window.navigator.userAgent.match(/UCBrowser/i));
 			if(deviceInfo.isWeChat){
 				$('.dialog_mask,.dialog_tip').show();
 			}else if(deviceInfo.isIOS){
