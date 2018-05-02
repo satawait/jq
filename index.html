@@ -78,7 +78,7 @@
 		    if (userAgent) {
 		        result.isWeChat = userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i)||userAgent.match(/TIM*/i);
 		        result.isIOS = userAgent.match(/(iPhone|iPad|iPod)/i)&&userAgent.match(/Safari*/i)
-		        	&&(!userAgent.match(/MQQBrower*/i)||!userAgent.match(/CriOS*/i)||!userAgent.match(/UCBrowser*/i));
+		        	&&(!userAgent.match(/MQQBrowser*/i)||!userAgent.match(/CriOS*/i)||!userAgent.match(/UCBrowser*/i));
 		        result.isAndroid = userAgent.match(/Android/i);
 		    }
 		    return result;
