@@ -59,7 +59,7 @@
 			alert(!window.navigator.userAgent.match(/MQQBrowser/i));
 			alert(!window.navigator.userAgent.match(/CriOS/i));
 			alert(!window.navigator.userAgent.match(/UCBrowser/i));
-			alert(!window.navigator.userAgent.match(/MQQBrowser/i)||!window.navigator.userAgent.match(/CriOS/i)||!window.navigator.userAgent.match(/UCBrowser/i));
+			alert(!(window.navigator.userAgent.match(/MQQBrowser/i)||window.navigator.userAgent.match(/CriOS/i)||window.navigator.userAgent.match(/UCBrowser/i)));
 			if(deviceInfo.isWeChat){
 				$('.dialog_mask,.dialog_tip').show();
 			}else if(deviceInfo.isIOS){
@@ -82,7 +82,7 @@
 		    if (userAgent) {
 		        result.isWeChat = userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i)||userAgent.match(/TIM*/i);
 		        result.isIOS = userAgent.match(/(iPhone|iPad|iPod)/i)&&userAgent.match(/Safari*/i)
-		        	&&(!userAgent.match(/MQQBrowser/i)||!userAgent.match(/CriOS/i)||!userAgent.match(/UCBrowser/i));
+		        	&&!(userAgent.match(/MQQBrowser/i)||userAgent.match(/CriOS/i)||userAgent.match(/UCBrowser/i));
 		        result.isAndroid = userAgent.match(/Android/i);
 		    }
 		    return result;
