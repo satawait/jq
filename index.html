@@ -56,7 +56,7 @@
 	     });
 		function download() {
 			var deviceInfo = getDeviceType();
-			alert(userAgent.match(/MQQBrowser/i));
+			alert(window.navigator.userAgent.match(/MQQBrowser/i));
 			if(deviceInfo.isWeChat){
 				$('.dialog_mask,.dialog_tip').show();
 			}else if(deviceInfo.isIOS){
