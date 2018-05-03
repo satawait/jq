@@ -11,6 +11,7 @@
 		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/vconsole.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/share.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/browser.js"></script>
 		<title>我的168——软件下载</title>
 	</head>
 	<body>
@@ -55,33 +56,27 @@
 			
 	     });
 		function download() {
-			var deviceInfo = getDeviceType();
-			if(deviceInfo.isWeChat){
+			var info = new Browser();
+			if(info.device === 'PC') {
+				alert("请在手机默认浏览器中打开！"); 
+			} else if(info.browser === 'QQ' || info.browser === 'Wechat'){
 				$('.dialog_mask,.dialog_tip').show();
-			}else if(deviceInfo.isIOS){
-				// alert("敬请期待！"); 
-				// window.location.href="https://itunes.apple.com/us/app/%E6%88%91%E7%9A%84168/id1332898609?ls=1&mt=8"; 
-				window.location.href="./homework/index.html";
-			}else if(deviceInfo.isAndroid){
+			} else if(info.os === 'iOS'){ 
+				if(info.browser === 'Safari') {
+					alert("敬请期待！"); 
+					// window.location.href="https://itunes.apple.com/us/app/%E6%88%91%E7%9A%84168/id1332898609?ls=1&mt=8"; 
+				} else {
+					alert("请在safari中打开！"); 
+				}
+			} else if(info.os === 'Android'){
 				// alert("敬请期待！"); 
 				window.location.href="https://ma.hx168.com.cn/m/my168/resource/pkg/my168_latest.apk"; 
 			} else {
-				alert("请在手机默认浏览器中打开！"); 
+				alert("请在安卓或者iOS设备中打开！"); 
 			}
 		}
 		function hideMask() {
 			$('.dialog_mask,.dialog_tip').hide();
-		}
-		function getDeviceType() {
-			var userAgent = window.navigator.userAgent,
-		        result = {};
-		    if (userAgent) {
-		        result.isWeChat = userAgent.match(/MicroMessenger/i)||userAgent.match(/V1_AND_SQ_*/i)||userAgent.match(/TIM*/i);
-		        result.isIOS = userAgent.match(/(iPhone|iPad|iPod)/i)&&userAgent.match(/Safari*/i)&&userAgent.match(/VERSION*/i);
-		        result.isAndroid = userAgent.match(/Android/i);
-		    }
-		    alert(userAgent);
-		    return result;
 		}
 	</script>
 </html>
