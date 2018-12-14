@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="js/vconsole.min.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="js/share.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/browser.js"></script>
+		<title>我的168——软件下载</title>
+	</head>
+	<body>
+		<section class="main fixed load_box">
+			<header>
+				<div class="load_head">
+					<div class="logo"></div>
+					<p>我的168</p>
+					<p class="small">华西人的高效办公利器</p>
+				</div>
+			</header>
+			<article>
+				<div class="load_main">
+					<div class="load_bott">
+						<div class="btn_box">
+							<ul>
+								<li><a href="javaScript:download();">立即下载</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</article>
+			<footer>
+				<div class="pages">
+					<img src="images/pages.png">
+				</div>
+			</footer>
+		</section>
+		<div class="dialog_mask" onclick="hideMask();"></div>
+		<div class="dialog_tip" onclick="hideMask();">
+			<img src="images/share-object-bg.png">
+		</div>
+	</body>
+	<script type="text/javascript">
+		// var vConsole = new VConsole();
+		setShareInfo({
+			pic: "https://ma.hx168.com.cn/m/my168/resource/downloadpage/images/logo.png",
+			summary: "华西人的高效办公利器!",
+			title: "华西人的高效办公利器",
+			url: window.location.href
+			
+	     });
+		function download() {
+			var info = new Browser();
+			if(info.device === 'PC') {
+				alert("请在手机默认浏览器中打开！"); 
+			} else if(info.browser === 'QQ' || info.browser === 'Wechat'){
+				$('.dialog_mask,.dialog_tip').show();
+			} else if(info.os === 'iOS'){ 
+				if(info.browser === 'Safari') {
+					// var timeDiv = Math.round((new Date('2018/05/23 13:00:00') - new Date())/(3600*1000));
+					// timeDiv = timeDiv <= 12 ? 12 : timeDiv;
+					// alert("iOS安检进入最后阶段啦~我比您更着急，请再耐心等待一下哦~ ヽ(。>д<)ｐ"); 
+					window.location.href="https://itunes.apple.com/us/app/%E6%88%91%E7%9A%84168/id1332898609?ls=1&mt=8"; 
+				} else {
+					alert("请在safari中打开！"); 
+				}
+			} else if(info.os === 'Android'){
+				// alert("敬请期待！"); 
+				window.location.href="http://wxtest.hx168.com.cn/ycf/168/my168_latest.apk"; 
+			} else {
+				alert("请在安卓或者iOS设备中打开！"); 
+			}
+		}
+		function hideMask() {
+			$('.dialog_mask,.dialog_tip').hide();
+		}
+	</script>
+</html>
